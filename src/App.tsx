@@ -1,11 +1,21 @@
-function App() {
+import { Suspense } from 'react'
+import { RouterProvider } from 'react-router-dom'
+import { QueryClientProvider } from '@/lib/query-client'
+import { DirectionProvider } from '@radix-ui/react-direction'
+import { NuqsAdapter } from 'nuqs/adapters/react-router/v7'
+
+import { router } from '@/router'
+
+export function App() {
   return (
-    <div className="flex h-screen items-center justify-center bg-gray-100">
-      <h1 className="text-center text-4xl font-bold text-gray-800">
-        Hello, World!
-      </h1>
-    </div>
+    <Suspense fallback={<div>Loading...</div>}>
+      <NuqsAdapter>
+        <DirectionProvider dir="rtl">
+          <QueryClientProvider>
+            <RouterProvider router={router} />
+          </QueryClientProvider>
+        </DirectionProvider>
+      </NuqsAdapter>
+    </Suspense>
   )
 }
-
-export default App

@@ -3,6 +3,17 @@ export default {
   darkMode: ['class'],
   content: ['./index.html', './src/**/*.{ts,tsx,js,jsx}'],
   theme: {
+    fontFamily: {
+      sans: [
+        'alibaba',
+        'system-ui',
+        'BlinkMacSystemFont',
+        '-apple-system',
+        'Segoe UI',
+        'Roboto',
+        'sans-serif',
+      ],
+    },
     extend: {
       borderRadius: {
         lg: 'var(--radius)',
@@ -10,6 +21,7 @@ export default {
         sm: 'calc(var(--radius) - 4px)',
       },
       colors: {
+        brand: 'var(--brand)',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
