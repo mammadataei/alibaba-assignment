@@ -44,7 +44,7 @@ export function Component() {
         </div>
       </div>
 
-      <ImageGallery />
+      <ImageGallery images={hotel.images} />
 
       <div className="grid grid-cols-3 gap-12">
         {/* Left Column */}

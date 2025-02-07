@@ -12,6 +12,7 @@ export interface HotelResource {
   amenities: string[]
   reviews: number
   price: number
+  images: string[]
 }
 
 export interface CommentResource {

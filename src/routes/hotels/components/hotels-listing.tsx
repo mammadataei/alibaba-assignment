@@ -72,7 +72,7 @@ function HotelsListingItem({ hotel }: HotelsListingItemProps) {
             width={305}
             height={204}
             loading="lazy"
-            src={`https://random-image-pepebigotes.vercel.app/api/random-image`}
+            src={hotel.images[0]}
             alt={hotel.name}
             className="aspect-3/2 object-cover"
           />
