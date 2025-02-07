@@ -11,6 +11,7 @@
     "format": "prettier --write .",
     "codegen": "tsx scripts/generate-data.ts",
     "test": "cypress open --e2e --config-file cypress.config.mts",
+    "test:ci": "cypress run --config-file cypress.config.mts",
     "ui": "shadcn",
     "prepare": "husky",
     "postinstall": "pnpm run codegen"
@@ -73,7 +74,5 @@
     "*.{js,ts,jsx,tsx}": "eslint --fix",
     "*.{js,jsx,ts,tsx,md,html,css}": "prettier --write"
   },
-  "volta": {
-    "node": "23.7.0"
-  }
+  "packageManager": "pnpm@10.2.1"
 }
