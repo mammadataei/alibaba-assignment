@@ -33,6 +33,7 @@ export const hotelFactory = (data?: Partial<HotelResource>): HotelResource => ({
   id: faker.string.uuid(),
   name: `${faker.helpers.arrayElement(hotelPrefixes)} ${faker.helpers.arrayElement(locationAdjectives)} ${faker.helpers.arrayElement(hotelTypes)}`,
   description: createHotelDescription(),
+  address: faker.location.street(),
   location: {
     lat: faker.location.latitude(),
     long: faker.location.longitude(),
@@ -83,9 +84,10 @@ export const commentFactory = (hotelId: string): CommentResource => {
   const rating = parseInt(faker.number.float({ min: 1, max: 5 }).toFixed(0))
   return {
     id: faker.string.uuid(),
-    hotelId,
+    hotel_id: hotelId,
     name: `${faker.person.firstName()} ${faker.person.lastName()}`,
     text: commentTextFactory(rating),
     rating,
+    created_at: faker.date.recent().toISOString(),
   }
 }

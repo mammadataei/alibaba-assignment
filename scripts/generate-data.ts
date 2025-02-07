@@ -5,7 +5,7 @@ import { commentFactory, hotelFactory } from '../tests/factories'
 const generateData = () => {
   const hotels = Array.from({ length: 20 }, hotelFactory)
   const comments = hotels.flatMap((hotel) =>
-    Array.from({ length: faker.number.int({ min: 1, max: 5 }) }, () =>
+    Array.from({ length: faker.number.int({ min: 15, max: 30 }) }, () =>
       commentFactory(hotel.id),
     ),
   )

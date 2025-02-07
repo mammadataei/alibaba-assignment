@@ -12,15 +12,15 @@ export function Header() {
   return (
     <header className="border-b">
       <div className="flex items-center justify-between px-10 py-4">
-        <div className="flex items-center">
+        <a href="/" className="flex items-center">
           <img src="/logo.svg" alt="Logo" className="h-6" />
-        </div>
+        </a>
 
         <div className="flex min-w-fit items-center rounded-full border py-2 pe-2 shadow-sm transition hover:shadow-md">
           <div className="flex items-center gap-x-4 px-6">
             <span className="font-medium">تهران</span>
             <Separator orientation="vertical" className="h-5" />
-            <span>۱۳ - ۱۸ بهمن</span>
+            <span>۱۵ - ۱۷ اسفند</span>
             <Separator orientation="vertical" className="h-5" />
             <span className="text-muted-foreground">۲ بزرگسال، ۱ اتاق</span>
           </div>

@@ -3,7 +3,7 @@ import { RouterProvider } from 'react-router-dom'
 import { QueryClientProvider } from '@/lib/query-client'
 import { DirectionProvider } from '@radix-ui/react-direction'
 import { NuqsAdapter } from 'nuqs/adapters/react-router/v7'
-
+import { Layout } from '@/components/layout'
 import { router } from '@/router'
 
 export function App() {
@@ -12,7 +12,9 @@ export function App() {
       <NuqsAdapter>
         <DirectionProvider dir="rtl">
           <QueryClientProvider>
-            <RouterProvider router={router} />
+            <Layout>
+              <RouterProvider router={router} />
+            </Layout>
           </QueryClientProvider>
         </DirectionProvider>
       </NuqsAdapter>

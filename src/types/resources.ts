@@ -2,6 +2,7 @@ export interface HotelResource {
   id: string
   name: string
   description: string
+  address: string
   location: {
     lat: number
     long: number
@@ -15,8 +16,9 @@ export interface HotelResource {
 
 export interface CommentResource {
   id: string
-  hotelId: string
+  hotel_id: string
   name: string
   text: string
   rating: number
+  created_at: string
 }
