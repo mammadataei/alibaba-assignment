@@ -11,6 +11,7 @@ import { ImageGallery } from './components/image-gallery'
 import { useParams } from 'react-router-dom'
 import { Suspense } from 'react'
 import { CommentsSkeleton } from './components/comments-skeleton'
+import { Location } from './components/location'
 
 export function Component() {
   const { id } = useParams<{ id: string }>()
@@ -69,6 +70,9 @@ export function Component() {
           <Suspense fallback={<CommentsSkeleton />}>
             <Comments hotel={hotel} />
           </Suspense>
+
+          <Separator />
+          <Location hotel={hotel} />
         </div>
 
         <BookingCard hotel={hotel} />
