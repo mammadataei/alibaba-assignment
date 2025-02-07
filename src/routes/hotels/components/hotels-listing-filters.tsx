@@ -96,7 +96,7 @@ export function HotelsListingFilters() {
               <DropdownMenuTrigger asChild>
                 <Button
                   variant="outline"
-                  className="whitespace-nowrap rounded-full"
+                  className="cursor-not-allowed whitespace-nowrap rounded-full"
                 >
                   <span>امکانات هتل</span>
                   <ChevronDown className="h-4 w-4 opacity-50" />

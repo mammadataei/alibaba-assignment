@@ -32,11 +32,17 @@ export function Component() {
             <span>تهران، {hotel.address}</span>
           </div>
           <div className="flex gap-2">
-            <Button variant="ghost" size="sm">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => {
+                navigator.clipboard.writeText(window.location.href)
+              }}
+            >
               <Share2 className="me-1" size={16} />
               اشتراک‌گذاری
             </Button>
-            <Button variant="ghost" size="sm">
+            <Button variant="ghost" size="sm" className="cursor-not-allowed">
               <Heart className="me-1" size={16} />
               ذخیره
             </Button>

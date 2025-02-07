@@ -23,7 +23,7 @@ export function BookingCard({ hotel }: { hotel: HotelResource }) {
             </div>
           </div>
 
-          <div className="mb-4 rounded-xl border">
+          <div className="mb-4 cursor-not-allowed rounded-xl border">
             <div className="grid grid-cols-2 border-b">
               <div className="space-y-1 border-l px-3 py-2">
                 <div className="text-xs font-bold text-secondary-foreground">
@@ -53,7 +53,7 @@ export function BookingCard({ hotel }: { hotel: HotelResource }) {
             </div>
           </div>
 
-          <Button className="mb-4 w-full">رزرو اتاق</Button>
+          <Button className="mb-4 w-full cursor-not-allowed">رزرو اتاق</Button>
           <p className="mb-6 text-center text-xs">
             مبلغ فقط پس از تایید نهایی کسر خواهد شد
           </p>

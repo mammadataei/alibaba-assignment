@@ -16,7 +16,7 @@ export function Header() {
           <img src="/logo.svg" alt="Logo" className="h-6" />
         </a>
 
-        <div className="flex min-w-fit items-center rounded-full border py-2 pe-2 shadow-sm transition hover:shadow-md">
+        <div className="flex min-w-fit cursor-not-allowed items-center rounded-full border py-2 pe-2 shadow-sm transition hover:shadow-md">
           <div className="flex items-center gap-x-4 px-6">
             <span className="font-medium">تهران</span>
             <Separator orientation="vertical" className="h-5" />
@@ -33,7 +33,11 @@ export function Header() {
         <div className="flex items-center gap-x-4">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="icon" className="rounded-full">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="cursor-not-allowed rounded-full"
+              >
                 <Globe size={4} className="text-primary" />
               </Button>
             </DropdownMenuTrigger>
@@ -48,7 +52,7 @@ export function Header() {
           </DropdownMenu>
           <Button
             variant="outline"
-            className="flex items-center space-x-2 rounded-full"
+            className="flex cursor-not-allowed items-center space-x-2 rounded-full"
           >
             <Menu className="h-4 w-4" />
           </Button>

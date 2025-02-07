@@ -89,7 +89,7 @@ function HotelsListingItem({ hotel }: HotelsListingItemProps) {
               </h3>
             </div>
 
-            <Button variant="ghost" size="icon">
+            <Button variant="ghost" size="icon" className="cursor-not-allowed">
               <Heart size={24} className="fill-transparent stroke-[1.5]" />
             </Button>
           </div>
