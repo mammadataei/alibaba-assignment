@@ -35,8 +35,8 @@ export const hotelFactory = (data?: Partial<HotelResource>): HotelResource => ({
   description: createHotelDescription(),
   address: faker.location.street(),
   location: {
-    lat: faker.location.latitude(),
-    long: faker.location.longitude(),
+    lat: faker.number.float({ min: 35.5952, max: 35.8486, fractionDigits: 4 }),
+    long: faker.number.float({ min: 51.2097, max: 51.5765, fractionDigits: 4 }),
   },
   rating: faker.number.float({ min: 1, max: 5, fractionDigits: 1 }),
   amenities: faker.helpers.arrayElements(hotelAmenities, { min: 3, max: 8 }),

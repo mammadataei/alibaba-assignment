@@ -53,6 +53,24 @@ export function useGetAllHotelsInfinite({
   })
 }
 
+export function useGetAllHotels({
+  searchQuery,
+  rating,
+}: Pick<UseGetAllHotelsInfiniteOptions, 'searchQuery' | 'rating'>) {
+  return useSuspenseQuery<HotelResource[]>({
+    queryKey: ['hotels', { search: searchQuery, rating_gte: rating }],
+    queryFn: async () => {
+      const response = await client.get('/hotels', {
+        params: {
+          q: searchQuery,
+          rating_gte: rating ? Number(rating) : undefined,
+        },
+      })
+      return response.data
+    },
+  })
+}
+
 export function useGetHotel(id: string) {
   return useSuspenseQuery<HotelResource>({
     queryKey: ['hotel', id],
