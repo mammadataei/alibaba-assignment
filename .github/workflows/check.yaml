@@ -48,7 +48,6 @@ jobs:
       - name: Run Tests
         uses: cypress-io/github-action@v6
         with:
-          install: false
           start: pnpm dev
           command: pnpm test:ci
           wait-on: 'http://localhost:5173'
