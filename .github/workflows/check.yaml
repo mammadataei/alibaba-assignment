@@ -57,11 +57,15 @@ jobs:
             ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile --ignore-scripts=false
+        run: pnpm install --frozen-lockfile
+
+      - name: Install Cypress binary
+        run: pnpm cypress install
 
       - name: Run Tests
         uses: cypress-io/github-action@v6
         with:
+          install: false
           build: pnpm build
           start: pnpm dev
           command: pnpm test:ci
