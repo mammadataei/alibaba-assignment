@@ -43,7 +43,10 @@ jobs:
           cache: 'pnpm'
 
       - name: Install dependencies
-        run: pnpm i
+        run: pnpm install --frozen-lockfile
+
+      - name: Install Cypress binary
+        run: pnpm cypress install
 
       - name: Run Tests
         uses: cypress-io/github-action@v6
