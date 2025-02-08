@@ -1,58 +1,76 @@
-# React + TypeScript + Vite
+# Alibaba Hotel Reservation Assignment
 
-This template provides a minimal setup to get React working in Vite with HMR and
-some ESLint rules.
+## Tech Stack
 
-Currently, two official plugins are available:
+- [Vite](https://vitejs.dev/)
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [Shadcn UI](https://ui.shadcn.com/)
+- [React Query](tanstack.com/query/)
+- [React Leaflet](https://react-leaflet.js.org/)
+- [Cypress](https://www.cypress.io/)
+- [Vite Remix Router](https://github.com/mammadataei/vite-plugin-remix-router)
+- [Vite Json Server](https://github.com/yracnet/vite-plugin-json-server/)
+- [Vite PWA](https://vite-pwa-org.netlify.app/)
+- etc.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md)
-  uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc)
-  uses [SWC](https://swc.rs/) for Fast Refresh
+## Getting Started
 
-## Expanding the ESLint configuration
+Install dependencies using pnpm:
 
-If you are developing a production application, we recommend updating the
-configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+pnpm install
 ```
 
-- Replace `tseslint.configs.recommended` to
-  `tseslint.configs.recommendedTypeChecked` or
-  `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install
-  [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and
-  update the config:
+Generate the mock data:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+pnpm codegen
 ```
+
+Start the development server:
+
+```bash
+pnpm dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) with your browser to see the
+result.
+
+## Mock Server
+
+The mock server is generated using the `vite-plugin-json-server` plugin. The
+mock server is available at
+[http://localhost:5173/api](http://localhost:5173/api). It will serve the data
+from `server/db.json`. the data is generated using the factories available in
+`tests/factories.ts`.
+
+## Testing
+
+Tests are written using Cypress E2E testing. To run the tests:
+
+```bash
+pnpm test
+```
+
+## Docker
+
+Dockerfile is available to build the image. Note that the image only contains
+the production build of the application, so it doesn't have the mock server. To
+build the image:
+
+```bash
+docker build -t alibaba-hotel-reservation .
+```
+
+To run the image:
+
+```bash
+docker run -p 8080:80 alibaba-hotel-reservation
+```
+
+## CI Configuration
+
+The project is configured to run linting, build, and tests on GitHub Actions.
+The workflow is available at `.github/workflows/check.yml`.

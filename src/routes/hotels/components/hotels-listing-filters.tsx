@@ -20,6 +20,10 @@ import { hotelAmenities as amenities } from '../../../../tests/fixtures'
 import { useDebounce } from '@/hooks/use-debounce'
 
 export function HotelsListingFilters() {
+  // I used the useQueryState hook to manage the states with the URL query parameters.
+  // This will allow the user to bookmark the page and share the URL with the filters applied.
+  // It also allows to share state between different components without the need for
+  // prop drilling, context or global state management.
   const [searchQuery, setSearchQuery] = useQueryState('q')
   const [sort, setSort] = useQueryState('sort', { defaultValue: 'default' })
   const [rating, setRating] = useQueryState('rating_gte')

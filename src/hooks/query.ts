@@ -1,3 +1,5 @@
+// In case of an OpenAPI spec, I would normally use libraries such as Orval,
+// or Kubb for generating the API client and react-query/SWR hooks.
 import {
   useSuspenseInfiniteQuery,
   useSuspenseQuery,
@@ -11,7 +13,7 @@ const COMMENTS_PER_PAGE = 5
 interface UseGetAllHotelsInfiniteOptions {
   searchQuery: string | null
   sort: string | null
-  rating: string | null // will receive numeric string values
+  rating: string | null
 }
 
 export function useGetAllHotelsInfinite({

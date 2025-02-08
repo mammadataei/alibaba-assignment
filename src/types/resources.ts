@@ -1,3 +1,5 @@
+// In case of an OpenAPI spec, I would normally use libraries such as Orval,
+// or Kubb for generating server response types and validation schemas.
 export interface HotelResource {
   id: string
   name: string
